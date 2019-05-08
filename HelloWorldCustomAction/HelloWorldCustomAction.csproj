@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A2948C07-9628-4412-B0BE-97CF54D01A19}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelloWorldCustomAction</RootNamespace>
+    <AssemblyName>HelloWorldCustomAction</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AppDomainToolkit, Version=1.0.4.1, Culture=neutral, PublicKeyToken=f2fc7ab5180cf5c4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\AppDomainToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.Common, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.DataAccess, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.Interfaces, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.OData, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.Repository, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.Security, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.Services, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Core.UICommon, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Core.UICommon.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Extension.AppManagement, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Extension.AppManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Extension.Auditing, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Extension.Auditing.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Extension.Localizations, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Extension.Localizations.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Extension.Search, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Extension.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.HttpResponseCompression.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.HttpResponseCompression.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.HttpResponseCompression.Owin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.HttpResponseCompression.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.HttpResponseCompression.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.HttpResponseCompression.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Cireson.Platform.Runtime, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Cireson.Platform.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentScheduler, Version=3.1.46.0, Culture=neutral, PublicKeyToken=b76503528a14ebd1, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\FluentScheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="LicenseManagement.Client, Version=1.0.6157.28886, Culture=neutral, PublicKeyToken=98ba2176e2a9efbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\LicenseManagement.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.7.3, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.CodeAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=1.3.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Core, Version=6.17.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.OData.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.OData.Edm, Version=6.17.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.OData.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.FileSystems, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.FileSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Hosting, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.Hosting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.StaticFiles, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Owin.StaticFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.4.0.1\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Practices.Unity.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Spatial, Version=6.17.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Microsoft.Web.XmlTransform.dll</HintPath>
+    </Reference>
+    <Reference Include="MultipartDataMediaFormatter, Version=5.3.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\MultipartDataMediaFormatter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Core, Version=2.12.0.817, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\NuGet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="SslCertBinding.Net, Version=1.0.2.0, Culture=neutral, PublicKeyToken=46398e4c25dead31, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\SslCertBinding.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.6132.35681, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=1.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.8.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Web.Http.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.OData, Version=5.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\System.Web.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\lib\net46\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="App.config" />
+    <None Include="CiresonDebug.json" />
+    <Content Include="Extension.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ContentRoot\ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actions\" />
+    <Folder Include="Filters\" />
+    <Folder Include="Instrumentation\" />
+    <Folder Include="Lifecycle\" />
+    <Folder Include="Messaging\" />
+    <Folder Include="Models\" />
+    <Folder Include="Search\" />
+    <Folder Include="Triggers\" />
+    <Folder Include="Workers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Cireson.Platform.SDK.5.3.0-alpha-sdphase4-0000\analyzers\dotnet\cs\Cireson.Platform.CodeAnalyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
