@@ -1,9 +1,11 @@
-﻿{
+{
   "PrimaryAssembly": "HelloWorldCustomAction.dll",
   "ContentRootPath": "ContentRoot",
   "ExtensionName": "HelloWorldCustomAction",
   "Description": null,
   "Version": "1.0.0.0",
+  "SecondaryAssemblies": [],
   "ResourcePriority": 0,
-  "SecondaryAssemblies": [ ]
+  "IsApplicationPackage": false,
+  "Keywords": []
 }

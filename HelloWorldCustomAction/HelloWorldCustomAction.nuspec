@@ -1,0 +1,78 @@
+<package>
+  <metadata minClientVersion="2.8">
+    <id>HelloWorldCustomAction</id>
+    <version>$version$</version>
+    <title>HelloWorldCustomAction</title>
+    <authors>Cireson</authors>
+    <owners>Cireson</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HelloWorldCustomAction</description>
+    <copyright>Copyright © 2019</copyright>
+    <tags></tags>
+    <dependencies>
+      <dependency version="3.4.1.9004" id="Antlr" />
+      <dependency version="1.0.4.3" id="AppDomainToolkit" />
+      <dependency version="5.4.0-dev-customaction0111" id="Cireson.ControlCenter.Core" />
+      <dependency version="1.14.56" id="Cireson.Platform.Extension.WebUi" />
+      <dependency version="5.3.0-alpha-sdphase4-0000" id="Cireson.Platform.SDK" />
+      <dependency version="1.2.11" id="Cireson.RemoteManage.PlatformServices" />
+      <dependency version="1.3" id="CommonServiceLocator" />
+      <dependency version="6.0.1304.0" id="EnterpriseLibrary.TransientFaultHandling" />
+      <dependency version="6.0.1304.1" id="EnterpriseLibrary.TransientFaultHandling.Data" />
+      <dependency version="6.2.0" id="EntityFramework" />
+      <dependency version="1.4.9.5" id="HtmlAgilityPack" />
+      <dependency version="1.2.5" id="Ix-Async" />
+      <dependency version="1.6.4" id="jQuery" />
+      <dependency version="2.2.1" id="Microsoft.AspNet.Identity.Core" />
+      <dependency version="2.2.1" id="Microsoft.AspNet.Identity.EntityFramework" />
+      <dependency version="5.2.3" id="Microsoft.AspNet.Mvc" />
+      <dependency version="5.9.1" id="Microsoft.AspNet.OData" />
+      <dependency version="3.2.3" id="Microsoft.AspNet.Razor" />
+      <dependency version="2.3.0" id="Microsoft.AspNet.SignalR" />
+      <dependency version="2.3.0" id="Microsoft.AspNet.SignalR.Core" />
+      <dependency version="2.3.0" id="Microsoft.AspNet.SignalR.JS" />
+      <dependency version="2.3.0" id="Microsoft.AspNet.SignalR.SystemWeb" />
+      <dependency version="1.1.3" id="Microsoft.AspNet.Web.Optimization" />
+      <dependency version="5.2.3" id="Microsoft.AspNet.WebApi.Client" />
+      <dependency version="5.2.3" id="Microsoft.AspNet.WebApi.Core" />
+      <dependency version="3.2.3" id="Microsoft.AspNet.WebPages" />
+      <dependency version="1.1.10" id="Microsoft.Bcl" />
+      <dependency version="1.0.168" id="Microsoft.Bcl.Async" />
+      <dependency version="1.0.21" id="Microsoft.Bcl.Build" />
+      <dependency version="5.8.2" id="Microsoft.Data.Edm" />
+      <dependency version="5.8.2" id="Microsoft.Data.OData" />
+      <dependency version="1.1.3" id="Microsoft.IdentityModel.Logging" />
+      <dependency version="1.0.2.206221351" id="Microsoft.IdentityModel.Protocol.Extensions" />
+      <dependency version="5.1.3" id="Microsoft.IdentityModel.Tokens" />
+      <dependency version="1.0.0" id="Microsoft.Management.Infrastructure" />
+      <dependency version="2.2.29" id="Microsoft.Net.Http" />
+      <dependency version="6.17.0" id="Microsoft.OData.Core" />
+      <dependency version="6.17.0" id="Microsoft.OData.Edm" />
+      <dependency version="3.0.1" id="Microsoft.Owin" />
+      <dependency version="3.0.1" id="Microsoft.Owin.FileSystems" />
+      <dependency version="2.1.0" id="Microsoft.Owin.Host.SystemWeb" />
+      <dependency version="3.0.1" id="Microsoft.Owin.Security" />
+      <dependency version="3.0.1" id="Microsoft.Owin.Security.Cookies" />
+      <dependency version="6.17.0" id="Microsoft.Spatial" />
+      <dependency version="1.0.0.0" id="Microsoft.Web.Infrastructure" />
+      <dependency version="9.0.1" id="Newtonsoft.Json" />
+      <dependency version="1.0" id="Owin" />
+      <dependency version="4.29.0" id="Simple.OData.V4.Client" />
+      <dependency version="5.1.3" id="System.IdentityModel.Tokens.Jwt" />
+      <dependency version="1.0.7" id="System.Linq.Dynamic" />
+      <dependency version="10.0.10586.0" id="System.Management.Automation.dll" />
+      <dependency version="4.3.0" id="System.Runtime.Serialization.Primitives" />
+      <dependency version="5.8.2" id="System.Spatial" />
+      <dependency version="1.0.8" id="T4Scaffolding" />
+      <dependency version="1.0.0" id="T4Scaffolding.Core" />
+      <dependency version="4.0.1" id="Unity" />
+      <dependency version="1.6.0" id="WebGrease" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Extension.Manifest" target="metadata" />
+    <file src="ContentRoot\**" target="ui\ContentRoot" />
+    <file src="bin\$configuration$\HelloWorldCustomAction.dll" target="lib\net46" />
+    <file src="bin\$configuration$\HelloWorldCustomAction.pdb" target="lib\net46" />
+  </files>
+</package>
